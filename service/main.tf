@@ -5,7 +5,7 @@ resource "aws_ecs_task_definition" "webserver" {
 [
   {
     "name": "webserver",
-    "image": "nginx:latest",
+    "image": "docker.io/library/nginx:latest",
     "portMappings": [
       {
         "containerPort": 80,
