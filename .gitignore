@@ -1,0 +1,8 @@
+#terraform temp folder
+.terraform
+#keys aws
+.aws
+.DS_Store
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
