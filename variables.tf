@@ -4,7 +4,7 @@ variable "environment" {
 }
 
 variable "name" {
-  description = "Demo3"
+  description = "demo3"
   type        = string
 }
 
@@ -26,4 +26,23 @@ variable "private_subnets" {
 variable "public_subnets" {
   description = "CIDR for Private Subnets"
   type        = list(string)
+}
+
+variable "region" {
+
+  description = "region of project"
+  type        = string
+  
+}
+
+variable "ecr_id" {
+
+  description = "ecr id"
+  type        = string
+  
+}
+
+variable "dockerfile_dir" {
+  type = string
+  description = "The directory that contains the Dockerfile"
 }

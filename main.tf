@@ -36,6 +36,9 @@ module "ecs" {
 module "webserver" {
   source     = "./service"
   cluster_id = module.ecs.this_ecs_cluster_id
+  region     = var.region
+  name       = var.name
+  ecr_id     = var.ecr_id
 }
 
 #----- ECS  Instance--------
@@ -60,8 +63,8 @@ data "aws_ami" "amazon_linux_ecs" {
 }
 
 data "http" "myip" {
-  url = "http://ipv4.icanhazip.com"
-  #url = "https://ipinfo.io/ip"
+  #url = "http://ipv4.icanhazip.com"
+  url = "https://ipinfo.io/ip"
 }
 
 resource "aws_security_group" "ec2-webserver-sg" {
@@ -119,3 +122,11 @@ data "template_file" "user_data" {
     cluster_name = var.name
   }
 }
+
+module "initbuild" {
+  source = "./modules/initbuild"
+  ecr_id = var.ecr_id
+  region = var.region
+  dockerfile_dir = var.dockerfile_dir
+}
+

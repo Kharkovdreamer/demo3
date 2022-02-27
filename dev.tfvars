@@ -10,3 +10,6 @@ public_subnets = [
   "10.1.11.0/24",
   "10.1.12.0/24",
 ]
+region = "eu-central-1"
+ecr_id = "735217040085"
+dockerfile_dir = "../../docker"
