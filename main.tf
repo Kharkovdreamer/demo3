@@ -34,10 +34,10 @@ module "ecs" {
 #----- ECS  Services--------
 
 module "webserver" {
-  source     = "./service"
+  source     = "./modules/service"
   cluster_id = module.ecs.this_ecs_cluster_id
   region     = var.region
-  name       = var.name
+  #name       = var.name
   ecr_id     = var.ecr_id
 }
 

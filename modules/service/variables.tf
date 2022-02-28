@@ -7,9 +7,10 @@ variable "region" {
   description = "region"
   type        = string
 }
-variable "name" {
-  description = "project name"
+variable "ecr_name" {
+  description = "ecr name"
   type        = string
+  default     = "demo3"
 }
 
 variable "ecr_id" {

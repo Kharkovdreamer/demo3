@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "webserver" {
 [
   {
     "name": "webserver",
-    "image": "${var.ecr_id}.dkr.ecr.${var.region}.amazonaws.com/${var.name}:latest",
+    "image": "${var.ecr_id}.dkr.ecr.${var.region}.amazonaws.com/${var.ecr_name}:latest",
     "portMappings": [
       {
         "containerPort": 80,
@@ -38,7 +38,7 @@ resource "aws_ecs_service" "webserver" {
   cluster         = var.cluster_id
   task_definition = aws_ecs_task_definition.webserver.arn
 
-  desired_count = 1
+  desired_count = 2
 
   deployment_maximum_percent         = 100
   deployment_minimum_healthy_percent = 0
