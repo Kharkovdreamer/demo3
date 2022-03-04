@@ -18,10 +18,10 @@ docker push $ecr_id.dkr.ecr.$region.amazonaws.com/demo3:latest
 
 echo "Done."
 
-#docker rmi -f demo3
+docker rmi -f demo3
 
 echo "Cleaning images stage 1!"
 
-#docker rmi -f $ecr_id.dkr.ecr.$region.amazonaws.com/demo3:latest
+docker rmi -f $ecr_id.dkr.ecr.$region.amazonaws.com/demo3:latest
 
 echo "Cleaning images stage 2!"
