@@ -12,4 +12,4 @@ public_subnets = [
 ]
 region = "eu-central-1"
 ecr_id = "735217040085"
-dockerfile_dir = "./docker/"
+dockerfile_dir = "./modules/initbuild/docker/"

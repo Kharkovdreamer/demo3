@@ -63,8 +63,8 @@ data "aws_ami" "amazon_linux_ecs" {
 }
 
 data "http" "myip" {
-  #url = "http://ipv4.icanhazip.com"
-  url = "https://ipinfo.io/ip"
+  url = "http://ipv4.icanhazip.com"
+  #url = "https://ipinfo.io/ip"
 }
 
 resource "aws_security_group" "ec2-webserver-sg" {
